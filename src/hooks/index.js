@@ -15,7 +15,7 @@ export const useTasks = selectedProject => {
 
         unsubscribe = 
             selectedProject && !collatedTasksExist(selectedProject)
-                ? (unsubscribe = unsuscribe.where('projectId', '==', 'selectedProject'))
+                ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
                 : selectedProject === 'TODAY'
                 ? (unsubscribe = unsubscribe.where(
                     'date',
@@ -37,7 +37,7 @@ export const useTasks = selectedProject => {
                     ? newTasks.filter(
                         task =>
                             moment(task.date, 'DD-MM-YYYY').diff(moment(), 'days') <= 7 &&
-                            task.archived != true
+                            task.archived !== true
                     )
                     : newTasks.filter(task => task.archived !== true)
             );
