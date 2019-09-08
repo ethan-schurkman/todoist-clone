@@ -59,6 +59,7 @@ export const useProjects = () => {
             .firestore()
             .collection('projects')
             .where('userId', '==', 'fakeUserId3443')
+            .orderBy('projectId')
             .get()
             .then(snapshot => {
                 const allProjects = snapshot.docs.map(project => ({
