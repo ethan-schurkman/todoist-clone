@@ -264,7 +264,7 @@ header {
             }
         }
 
-        &.active, &:hover {
+        &.__active, &:hover {
             font-weight: bold;
             background-color: white;
         }
