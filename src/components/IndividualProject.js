@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import { useProjectsValue, useSelectedProjectValue } from '../context';
-import { firebase } from 'firebase';
+//import { firebase } from 'firebase'; // suspicious change?
+import { firebase } from '../firebase';
+
 
 export const IndividualProject = ({ project }) => {
     const [showConfirm, setShowConfirm] = useState(false);
@@ -39,8 +41,8 @@ export const IndividualProject = ({ project }) => {
                                 onClick={() => deleteProject(project.docId)}
                             >
                                 DELETE!
-                                <span onClick={() => setShowConfirm(!showConfirm)}>CANCEL!</span>
                             </button>
+                            <span onClick={() => setShowConfirm(!showConfirm)}>CANCEL!</span>
                         </div>
                     </div>
                 )}
