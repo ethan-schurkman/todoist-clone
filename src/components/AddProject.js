@@ -64,5 +64,4 @@ export const AddProject = ({shouldShow = false}) => {
                 </span>
         </div>
     )
-
 }
