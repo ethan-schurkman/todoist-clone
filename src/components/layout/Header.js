@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
+import { AddTask } from '../AddTask';
 
 export const Header = ({darkMode, setDarkMode}) => {
-    const [shouldShowMain, setShouldMain] = useState(false);
+    const [shouldShowMain, setShouldShowMain] = useState(false);
     const [showQuickAddTask, setShowQuickAddTask] = useState(false);
 
     return (
@@ -13,17 +14,47 @@ export const Header = ({darkMode, setDarkMode}) => {
                 </div>
                 <div className="settings">
                     <ul>
-                        <li className="settings__add" data-testid="quick-add-task-action">+</li>
+                        <li 
+                            className="settings__add" 
+                            data-testid="quick-add-task-action">
+                                <button
+                                    onClick={() => {
+                                        setShowQuickAddTask(true); 
+                                        setShouldShowMain(true)
+                                    }}
+                                    onKeyDown={() => {
+                                        setShowQuickAddTask(true); 
+                                        setShouldShowMain(true)
+                                    }}
+                                    role="button"
+                                    tabIndex={0}
+                                >
+                                    +
+                                </button> 
+                        </li>
                         <li 
                             className="settings__darkmode" 
                             data-testid="dark-mode-action"
-                            onClick={() => setDarkMode(!darkMode)}
                         >
-                            <FaPizzaSlice />
+                            <button
+                                type="button"
+                                onClick={() => setDarkMode(!darkMode)}
+                                onKeyDown={() => setDarkMode(!darkMode)}
+                            >
+                                <FaPizzaSlice />
+                            </button>
                         </li>
                     </ul>
                 </div>
             </nav>
+
+            <AddTask
+                showAddTaskMain={false}
+                shouldShowMain={shouldShowMain}
+                setShouldShowMain={setShouldShowMain}
+                showQuickAddTask={showQuickAddTask}
+                setShowQuickAddTask={setShowQuickAddTask}
+            />
         </header>
     );
 };

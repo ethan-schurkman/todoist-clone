@@ -124,6 +124,11 @@ $generic-bg: #db4c3f;
     }
 }
 
+@mixin transparent-button() {
+    background-color: transparent;
+    border: 0;
+}
+
 
 /* Darkmode
   ============================================ */
@@ -209,11 +214,24 @@ header {
                     &.settings__add {
                         margin-right: 15px;
                         font-size: 30px;
+
+                        button {
+                            @include transparent-button();
+                            color: white;
+                        }
                     }
 
-                    &.settings__dark-mode svg {
-                        width: 20px;
-                        height: 20px;
+                    &.settings__darkmode {
+                        button {
+                            @include transparent-button();
+                            color: white;
+                            cursor: pointer;
+                        }
+                        
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
             }
@@ -254,6 +272,12 @@ header {
     &__project {
         padding: 5px 0;
         cursor: pointer;
+
+        div:nth-child(1) {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
 
         &-delete {
             margin-left: auto;
@@ -502,6 +526,7 @@ header {
         .add-task__cancel-x {
             cursor: pointer;
             color: gray;
+            float: right;
             font-weight: bold;
             font-size: 12px;
             margin-top: 10px;
