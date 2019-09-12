@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
 
-export const Header = () => {
-    const x = 1; // just for linter in video. Might set up the linter for myself at some point.
+export const Header = ({darkMode, setDarkMode}) => {
+    const [shouldShowMain, setShouldMain] = useState(false);
+    const [showQuickAddTask, setShowQuickAddTask] = useState(false);
+
     return (
         <header className="header" data-testid="header">
             <nav>
@@ -12,7 +14,11 @@ export const Header = () => {
                 <div className="settings">
                     <ul>
                         <li className="settings__add" data-testid="quick-add-task-action">+</li>
-                        <li className="settings__darkmode" data-testid="dark-mode-action">
+                        <li 
+                            className="settings__darkmode" 
+                            data-testid="dark-mode-action"
+                            onClick={() => setDarkMode(!darkMode)}
+                        >
                             <FaPizzaSlice />
                         </li>
                     </ul>
