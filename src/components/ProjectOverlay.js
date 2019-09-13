@@ -17,12 +17,21 @@ export const ProjectOverlay = ({
                         <li
                             key={project.projectId}
                             data-testid="project-overlay-action"
-                            onClick={() => {
-                                setProject(project.projectId);
-                                setShowProjectOverlay(false);
-                            }}
                         >
-                            {project.name}
+                            <div
+                                onClick={() => {
+                                    setProject(project.projectId);
+                                    setShowProjectOverlay(false);
+                                }}
+                                onKeyDown={() => {
+                                    setProject(project.projectId);
+                                    setShowProjectOverlay(false);
+                                }}
+                                tabIndex={0}
+                                role="button"
+                            >
+                                {project.name}
+                            </div>
                         </li>
                     ))}
                 </ul>

@@ -30,6 +30,9 @@ export const IndividualProject = ({ project }) => {
                 className="sidebar__project-delete"
                 data-testid="delete-project"
                 onClick={() => setShowConfirm(!showConfirm)}
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                tabIndex={0}
+                role="button"
             >
                 <FaTrashAlt />
                 {showConfirm && (
@@ -42,7 +45,12 @@ export const IndividualProject = ({ project }) => {
                             >
                                 DELETE!
                             </button>
-                            <span onClick={() => setShowConfirm(!showConfirm)}>CANCEL!</span>
+                            <span 
+                                onClick={() => setShowConfirm(!showConfirm)}
+                                onKeyDown={() => setShowConfirm(!showConfirm)}
+                                tabIndex={0}
+                                role="button"
+                            >CANCEL!</span>
                         </div>
                     </div>
                 )}
@@ -53,3 +61,4 @@ export const IndividualProject = ({ project }) => {
 };
 
 
+ 
