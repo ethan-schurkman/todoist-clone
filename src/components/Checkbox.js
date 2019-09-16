@@ -1,7 +1,7 @@
 import React from 'react';
 import { firebase } from '../firebase';
 
-export const Checkbox = ({id}) => {
+export const Checkbox = ({ id, taskDesc }) => {
     const archiveTask = () => {
         firebase
             .firestore()
@@ -17,6 +17,11 @@ export const Checkbox = ({id}) => {
             className="checkbox-holder" 
             data-testid="checkbox-action"
             onClick={() => archiveTask()}
+            onKeyDown={() => archiveTask()}
+            role="button"
+            aria-label={`Mark ${taskDesc} as done`}
+            tabIndex={0}
+
         >
             <span className="checkbox" />
         </div>
