@@ -23,6 +23,7 @@ return (
                 className={active === 'inbox' ? 'active' : undefined}
             >
                 <div
+                    aria-label="Show Inbox Tasks"
                     onClick={() => {
                         setActive('inbox');
                         setSelectedProject('INBOX');
@@ -46,6 +47,7 @@ return (
 
             >
                 <div
+                    aria-label="Show Today Tasks"
                     onClick={() => {
                         setActive('today');
                         setSelectedProject('TODAY');
@@ -68,6 +70,7 @@ return (
                 className={active === 'next_7' ? 'active' : undefined}
             >
                 <div
+                    aria-label="Show Tasks for the Next 7 Days"
                     onClick={() => {
                         setActive('next_7');
                         setSelectedProject('NEXT_7');
@@ -86,7 +89,8 @@ return (
                 </div>
             </li>
         </ul>
-        <div className="sidebar__middle" 
+        <div className="sidebar__middle"
+            aria-label="Show/Hide Projects"
             onClick={() => setShowProjects(!showProjects)}
             onKeyDown={() => setShowProjects(!showProjects)}
             tabIndex={0}

@@ -68,6 +68,7 @@ export const AddTask = ({
                     onClick={() => setShowMain(!showMain)}
                     onKeyDown={() => setShowMain(!showMain)}
                     tabIndex={0}
+                    aria-label="Add task"
                     role="button"
                 >
                     <span className="add-task__plus">+</span>
@@ -83,6 +84,7 @@ export const AddTask = ({
                                 <span
                                     className="add-task__cancel-x"
                                     data-testid="add-task-quick-cancel"
+                                    arial-label="Cancel adding task"
                                     onClick={() => {
                                         setShowMain(false);
                                         setShowProjectOverlay(false);
@@ -113,6 +115,7 @@ export const AddTask = ({
                     />
                     <input
                         className="add-task__content"
+                        aria-label="Enter Your Task"
                         data-testid="add-task-content"
                         type="text"
                         value={task}
@@ -142,6 +145,7 @@ export const AddTask = ({
                                 setShowMain(false);
                                 setShowProjectOverlay(false);
                             }}
+                            aria-label="Cancel adding a task"
                             tabIndex={0}
                             role="button"
                         >
