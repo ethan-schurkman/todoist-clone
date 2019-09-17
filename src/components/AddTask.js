@@ -49,7 +49,7 @@ export const AddTask = ({
                 .then(() => {
                     setTask('');
                     setProject('');
-                    setShowMain('');
+                    setShowMain(false);
                     setShowProjectOverlay(false);
                 })           
         );
@@ -171,7 +171,6 @@ export const AddTask = ({
                         role="button"  
                     >
                         <FaRegCalendarAlt />
-
                     </span>
                 </div>
             )}

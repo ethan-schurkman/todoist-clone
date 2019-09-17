@@ -96,5 +96,33 @@ describe('<AddTask />', () => {
             fireEvent.click(queryByTestId('add-task-quick-cancel'));
             expect(setShowQuickAddTask).toHaveBeenCalled();
         });
+
+        it('renders <AddTask /> and adds a task to the inbox and clears state', () => {
+            useSelectedProjectValue.mockImplementation(() => ({
+                selectedProject: 'INBOX'
+            }));
+
+            const showQuickAddTask = true;
+            const setShowQuickAddTask = jest.fn(() => !showQuickAddTask);
+
+            const { queryByTestId } = render(
+                <AddTask 
+                    showQuickAddTask={showQuickAddTask}
+                    setShowQuickAddTask={setShowQuickAddTask} 
+                />
+            );
+            fireEvent.click(queryByTestId('show-main-action'));
+            expect(queryByTestId('add-task-content')).toBeTruthy();
+
+            fireEvent.change(queryByTestId('add-task-content'), {
+                target: {value: 'I am a new task!'}
+            });
+            expect(queryByTestId('add-task-content').value).toBe(
+                'I am a new task!'
+            );
+
+            fireEvent.click(queryByTestId('add-task'));
+            expect(setShowQuickAddTask).toHaveBeenCalled();
+        });
     });
 });
