@@ -21,7 +21,6 @@ export const Checkbox = ({ id, taskDesc }) => {
             role="button"
             aria-label={`Mark ${taskDesc} as done`}
             tabIndex={0}
-
         >
             <span className="checkbox" />
         </div>
