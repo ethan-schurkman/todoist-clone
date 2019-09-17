@@ -6,7 +6,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
     <div className="task-date" data-testid="task-date-overlay">
         <ul className="task-date__list">
             <li 
-                data-testid="task-date-overlay"
+                data-testid="task-date-today"
             >
                 <div
                     onClick={() => {
@@ -28,7 +28,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                 </div>
             </li>
             <li 
-                data-testid="task-date-overlay"
+                data-testid="task-date-tomorrow"
             >
                 <div
                     onClick={() => {
@@ -56,7 +56,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                 </div>
             </li>
             <li 
-                data-testid="task-date-overlay"
+                data-testid="task-date-next-week"
             >
                 <div
                     onClick={() => {
