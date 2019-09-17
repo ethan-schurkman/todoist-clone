@@ -22,5 +22,4 @@ export const App = ({ darkModeDefault = false }) => {
     </ProjectsProvider>
   </SelectedProjectProvider>
 )
-
-  };
+};

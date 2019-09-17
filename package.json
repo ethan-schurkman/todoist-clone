@@ -22,7 +22,6 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!src/index.js",
-      "!src/constants/*.js",
       "!src/hooks/*.js",
       "!src/context/*.js"
     ],
