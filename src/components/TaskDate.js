@@ -5,9 +5,7 @@ import {FaSpaceShuttle, FaSun, FaRegPaperPlane} from 'react-icons/fa';
 export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showTaskDate && (
     <div className="task-date" data-testid="task-date-overlay">
         <ul className="task-date__list">
-            <li 
-                data-testid="task-date-today"
-            >
+            <li>
                 <div
                     onClick={() => {
                         setShowTaskDate(false);
@@ -17,6 +15,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                         setShowTaskDate(false);
                         setTaskDate(moment().format('DD/MM/YYYY'));
                     }}
+                    data-testid="task-date-today"
                     tabIndex={0}
                     aria-label="Select today as the task date"
                     role="button"
@@ -27,9 +26,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                     <span>Today</span>
                 </div>
             </li>
-            <li 
-                data-testid="task-date-tomorrow"
-            >
+            <li>
                 <div
                     onClick={() => {
                         setShowTaskDate(false);
@@ -45,6 +42,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                             .format('DD/MM/YYYY')
                         );
                     }}
+                    data-testid="task-date-tomorrow"
                     tabIndex={0}
                     aria-label="Select tomorrow as the task date"
                     role="button"
@@ -55,9 +53,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                     <span>Tomorrow</span>
                 </div>
             </li>
-            <li 
-                data-testid="task-date-next-week"
-            >
+            <li>
                 <div
                     onClick={() => {
                         setShowTaskDate(false);
@@ -73,6 +69,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate }) => showT
                             .format('DD/MM/YYYY')
                         );
                     }}
+                    data-testid="task-date-next-week"
                     tabIndex={0}
                     aria-label="Select next week as the task date"
                     role="button"
