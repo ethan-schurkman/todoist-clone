@@ -14,7 +14,7 @@ export const Projects = ({ activeValue = null }) => {
             <li
                 key={project.projectId}
                 data-doc-id={project.docId}
-                data-testid="project-action"
+                data-testid="project-action-parent"
                 className={
                     active === project.projectId 
                         ? 'sidebar__project __active'
@@ -33,6 +33,7 @@ export const Projects = ({ activeValue = null }) => {
                         setActive(project.projectId);
                         setSelectedProject(project.projectId);
                     }}
+                    data-testid="project-action"
                 >
                     <IndividualProject project={project}/>
                 </div>

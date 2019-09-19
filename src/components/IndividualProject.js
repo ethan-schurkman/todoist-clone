@@ -52,7 +52,9 @@ export const IndividualProject = ({ project }) => {
                                 tabIndex={0}
                                 role="button"
                                 aria-label="Do not delete project"
-                            >CANCEL!</span>
+                            >
+                                CANCEL!
+                            </span>
                         </div>
                     </div>
                 )}
