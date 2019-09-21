@@ -66,7 +66,7 @@ export const AddProject = ({shouldShow = false}) => {
                 onClick={()=> setShow(!show)}
                 onKeyDown={() => setShow(!show)}
                 tabIndex={0}
-                >
+            >
                     Add Project
             </span>
         </div>
