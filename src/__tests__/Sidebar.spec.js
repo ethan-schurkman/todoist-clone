@@ -38,8 +38,7 @@ describe('<Sidebar />', () => {
             expect(queryByTestId('inbox').classList.contains('active')).toBeTruthy();
             expect(queryByTestId('today').classList.contains('active')).toBeFalsy();
             expect(queryByTestId('next_7').classList.contains('active')).toBeFalsy();
-        }); 
-        
+        });         
         
         it('changes the active component to inbox in collated tasks using onKeyDown', () => {
             const { queryByTestId } = render(<Sidebar />);
@@ -71,7 +70,8 @@ describe('<Sidebar />', () => {
             fireEvent.keyDown(queryByTestId('today-action'));
             expect(queryByTestId('inbox').classList.contains('active')).toBeFalsy();
             expect(queryByTestId('today').classList.contains('active')).toBeTruthy();
-            expect(queryByTestId('next_7').classList.contains('active')).toBeFalsy();        });
+            expect(queryByTestId('next_7').classList.contains('active')).toBeFalsy();        
+        });
 
         it('changes the active component to next_7 in collated tasks using onClick', () => {
             const { queryByTestId } = render(<Sidebar />);
@@ -92,7 +92,6 @@ describe('<Sidebar />', () => {
             expect(queryByTestId('today').classList.contains('active')).toBeFalsy();
             expect(queryByTestId('next_7').classList.contains('active')).toBeTruthy();
         });
-
 
         it('Actuate presence of projects on sidebar using onClick', () => {
             const { queryByTestId, queryByText } = render(<Sidebar />);
