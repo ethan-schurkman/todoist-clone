@@ -23,6 +23,7 @@ return (
                 className={active === 'inbox' ? 'active' : undefined}
             >
                 <div
+                    data-testid="inbox-action"
                     aria-label="Show Inbox Tasks"
                     onClick={() => {
                         setActive('inbox');
@@ -47,6 +48,7 @@ return (
 
             >
                 <div
+                    data-testid="today-action"
                     aria-label="Show Today Tasks"
                     onClick={() => {
                         setActive('today');
@@ -70,6 +72,7 @@ return (
                 className={active === 'next_7' ? 'active' : undefined}
             >
                 <div
+                    data-testid="next_7-action"
                     aria-label="Show Tasks for the Next 7 Days"
                     onClick={() => {
                         setActive('next_7');
